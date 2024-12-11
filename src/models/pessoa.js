@@ -21,8 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     role: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Pessoa', // Deixar diferenciado para saber quando estamos trabalhando com o modelo e quando é a tabela
-    tableName: 'pessoas' // Padrão SQL
+    modelName: 'Pessoa',
   });
   return Pessoa;
 };

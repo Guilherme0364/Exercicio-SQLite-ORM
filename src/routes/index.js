@@ -1,11 +1,9 @@
-// Ponto de acesso global
-
-const express = require('express')
-const pessoas = require('./PessoasRoute.js')
+const express = require('express');
+const pessoas = require('./pessoasRoute.js');
 
 module.exports = app => {
-    app.use(
-        express.json(), 
-        pessoas
-    )
-}
+  app.use(
+    express.json(),
+    pessoas,
+  );
+};

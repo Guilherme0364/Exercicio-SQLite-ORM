@@ -1,13 +1,12 @@
-const database = require('../models') // Executa o codigo trazendo o codigo de models trazendo os metodos dos outros modelos
-const Controller = require('./Controller')
-const PessoasServices = require('../services/PessoaService')
+const Controller = require('./Controller.js');
+const PessoaServices = require('../services/PessoaServices.js');
 
-const pessoasServices = new PessoasServices() // A instancia puxa todos os métodos da classe
+const pessoaServices = new PessoaServices();
 
-class Pessoacontroller extends Controller{
-    constructor(){
-        super(pessoasServices)
-    }
+class PessoaController extends Controller {
+  constructor() {
+    super(pessoaServices);
+  }
 }
 
-module.exports = Pessoacontroller;
+module.exports = PessoaController;

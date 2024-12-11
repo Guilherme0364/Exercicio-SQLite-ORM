@@ -18,3 +18,10 @@ sequelize init:seeders	                               Inicia os seeders
 sequelize migration:generate	                       Gera um novo arquivo de migração
 sequelize model:generate	                           Gera uma model e sua migração [alias: model:create]
 sequelize seed:generate	                               Gera um novo arquivo de seed
+
+Temos as duas pontas das associações 1 para N: 
+
+Equipe.hasMany(Atleta);
+Atleta.belongsTo(Equipe);
+
+Ou seja, uma equipe tem vários (hasMany) atletas, mas atletas pertencem a (belongsTo) somente uma equipe cada.

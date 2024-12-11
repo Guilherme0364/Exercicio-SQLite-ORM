@@ -1,10 +1,15 @@
 const Services = require('./Services.js');
 
-// Aqui vão métodos exclusivos da regra de negócio para o modelo pessoa
 class PessoaServices extends Services {
-  constructor() {
-    super('Pessoa');
-  }
+	constructor() {
+		super('Pessoa');
+	}
+
+	async pegaMatriculasPorEstudante(id) {
+		const estudante = await super.pegaUmRegistroPorId(id);
+		const listaMatriculas = await estudante.getAulasMatriculadas(); // Método criado automaticamente pelo mixin no model
+		return listaMatriculas;
+	}
 }
 
 module.exports = PessoaServices;

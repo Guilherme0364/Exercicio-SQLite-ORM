@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 			Curso.belongsTo(models.Categoria, { // Vários cursos podem ter uma categoria 
 				foreignKey: 'categoria_id'
 			})
-			Curso.belongsTo(models.Pessoas, { // Vários cursos podem ter uma pessoa 
+			Curso.belongsTo(models.Pessoa, { // Vários cursos podem ter uma pessoa 
 				foreignKey: 'docente_id'
 			})
 			Curso.hasMany(models.Matricula, {

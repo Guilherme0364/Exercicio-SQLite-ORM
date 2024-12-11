@@ -15,7 +15,11 @@ module.exports = (sequelize, DataTypes) => {
 			})
 
 			Pessoa.hasMany(models.Matricula, {
-				foreignKey: 'estudante_id'
+				foreignKey: 'estudante_id',
+				scope: { status: 'matriculado' },
+				/* Esse alias serve para criar o metodo getAulasMatriculadas na rota http://localhost:3000/pessoas/:id/matriculas
+				automaticamente, por isso o método não foi criado no PessoaService.js. Se tirarmos o scope, ele trará todas as matriculas*/
+				as: 'aulasMatriculadas'
 			})
 		}
 	}

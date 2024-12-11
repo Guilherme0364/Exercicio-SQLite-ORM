@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
 		sequelize,
 		modelName: 'Matricula',
 		tableName: 'matriculas'
+		paronoid: true
 	});
 	return Matricula;
 };

@@ -1,11 +1,11 @@
 const Controller = require('./Controller.js');
-const MatriculaService = require('../services/MatriculaService.js');
+const MatriculaServices = require('../services/MatriculaServices.js');
 
-const matriculaService = new MatriculaService();
+const matriculaServices = new MatriculaServices();
 
 class MatriculaController extends Controller {
   constructor() {
-    super(matriculaService);
+    super(matriculaServices);
   }
 }
 

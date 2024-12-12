@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
 				automaticamente, por isso o método não foi criado no PessoaService.js. Se tirarmos o scope, ele trará todas as matriculas*/
 				as: 'aulasMatriculadas'
 			});
+			Pessoa.hasMany(models.Matricula, {
+				foreignKey: 'estudante_id',												
+				as: 'todasAsMatriculas'					
+			});
 		}
 	}
 	Pessoa.init({

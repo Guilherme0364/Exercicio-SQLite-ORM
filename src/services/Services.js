@@ -9,6 +9,10 @@ class Services {
     return dataSource[this.model].findAll();
   }
 
+  async pegaRegistrosPorEscopo(escopo){ // Pega o escopo definido no modelo, como por exemplo, o de pessoa
+    return dataSource[this.model].scope(escopo).findAll() 
+  }
+
   async pegaUmRegistroPorId(id) {
     return dataSource[this.model].findByPk(id);
   }

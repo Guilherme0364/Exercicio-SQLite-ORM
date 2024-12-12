@@ -25,3 +25,10 @@ Equipe.hasMany(Atleta);
 Atleta.belongsTo(Equipe);
 
 Ou seja, uma equipe tem vários (hasMany) atletas, mas atletas pertencem a (belongsTo) somente uma equipe cada.
+
+Fluxo de criação de novas funções na arquitetura MVC: 
+    1°: Verifica como você vai utilizar o model nessa função, seja criando um relacionamento e definindo um mixin (função automática);
+    2°: Cria a função na Classe Service global se fizer sentido para os outros modelos ou na específica se não, após isso implemente o método;
+    3°: Depois de implementar o método no Service, faça o método na Controller específica de preferência com try e catch, pois é a controller que recebe a requisição:
+    4°: Finalmente,crie a rota na route específica chamando o método da controller.
+    

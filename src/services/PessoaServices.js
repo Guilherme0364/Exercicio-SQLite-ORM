@@ -1,15 +1,20 @@
 const Services = require('./Services.js');
 
 class PessoaServices extends Services {
-  constructor() {
-    super('Pessoa');
-  }
+	constructor() {
+		super('Pessoa');
+	}
 
-  async pegaMatriculasPorEstudante(id) {
-    const estudante = await super.pegaUmRegistroPorId(id);
-    const listaMatriculas = await estudante.getAulasMatriculadas();
-    return listaMatriculas;
-  }
+	async pegaMatriculasPorEstudante(id) {
+		const estudante = await super.pegaUmRegistroPorId(id);
+		const listaMatriculas = await estudante.getAulasMatriculadas();
+		return listaMatriculas;
+	}
+
+	async pegaPessoaEscopoTodos() { //Implementa o método da classe pai 'pegaRegistrosPorEscopo' porém passando o escopo definido no modelo
+		const listaPessoas = await super.pegaRegistrosPorEscopo('todosOsRegistros');
+		return listaPessoas;
+	}	
 }
 
 module.exports = PessoaServices;

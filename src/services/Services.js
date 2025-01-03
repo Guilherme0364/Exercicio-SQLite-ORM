@@ -1,12 +1,12 @@
 const dataSource = require('../database/models');
 
-class Services {
+class Services { // Aqui vão basicamente todas as funções do Sequeliza, em combinação com as funções da Controller
 	constructor(nomeDoModel) {
 		this.model = nomeDoModel;
 	}
 
-	async pegaTodosOsRegistros() {
-		return dataSource[this.model].findAll();
+	async pegaTodosOsRegistros(where = {}) {
+		return dataSource[this.model].findAll({ where: { ...where } });
 	}
 
 	async pegaRegistrosPorEscopo(escopo) { // Pega o escopo definido no modelo, como por exemplo, o de pessoa
@@ -18,9 +18,13 @@ class Services {
 	}
 
 	async pegaUmRegistro(where) {
-		return dataSource[this.model].findOne({ where: {...where}}); // recebe o objeto por parâmetro e vai espalhar o conteúdo dele aqui
-	  }
-	  
+		return dataSource[this.model].findOne({ where: { ...where } }); // recebe o objeto por parâmetro e vai espalhar o conteúdo dele aqui
+	}
+
+	async pegaEContaRegistros(where) {
+		return dataSource[this.model].findAndCountAll({ where: { ...where } }); 
+	}
+
 	async criaRegistro(dadosDoRegistro) {
 		return dataSource[this.model].create(dadosDoRegistro);
 	}

@@ -32,4 +32,5 @@ Fluxo de criação de novas funções na arquitetura MVC:
     3°: Depois de implementar o método no Service, faça o método na Controller específica de preferência com try e catch, pois é a controller que recebe a requisição:
     4°: Finalmente,crie a rota na route específica chamando o método da controller.
     
-query string: começa com a "?", tem as variaveis com seus valores atribuidos e separados por "&"
+Query string: começa com a "?", tem as variaveis com seus valores atribuidos e separados por "&"
+Sempre usar o transactions quando alterações no banco de dados afetarem duas tabelas ao mesmo tempo
